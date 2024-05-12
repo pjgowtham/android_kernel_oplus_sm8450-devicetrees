@@ -1,23 +1,9 @@
-/* waipio-audio-overlay.dtsi */
 /* #ifdef OPLUS_ARCH_EXTENDS */
-&lpass_cdc {
-	qcom,num-macros = <3>;
-};
-
-&wsa_macro {
-	status = "disabled";
-};
-
-&wsa883x_0221 {
-	status = "disabled";
-};
-
-&wsa883x_0222 {
-	status = "disabled";
-};
-
 &wcd938x_codec {
+	qcom,cdc-micbias1-mv = <2700>;
 	qcom,cdc-micbias2-mv = <2700>;
+	qcom,cdc-micbias3-mv = <2700>;
+	qcom,cdc-micbias4-mv = <2700>;
 };
 
 &waipio_snd {
@@ -26,22 +12,18 @@
 		"AMIC1", "MIC BIAS1",
 		"AMIC2", "Analog Mic2",
 		"AMIC2", "MIC BIAS2",
-		"AMIC3", "Analog Mic3",
-		"AMIC3", "MIC BIAS3",
 		"AMIC4", "Analog Mic4",
-		"AMIC4", "MIC BIAS3",
+		"AMIC4", "MIC BIAS4",
 		"AMIC5", "Analog Mic5",
-		"AMIC5", "MIC BIAS4",
+		"AMIC5", "MIC BIAS3",
 		"VA AMIC1", "Analog Mic1",
 		"VA AMIC1", "VA MIC BIAS1",
 		"VA AMIC2", "Analog Mic2",
 		"VA AMIC2", "VA MIC BIAS2",
-		"VA AMIC3", "Analog Mic3",
-		"VA AMIC3", "VA MIC BIAS3",
 		"VA AMIC4", "Analog Mic4",
-		"VA AMIC4", "VA MIC BIAS3",
+		"VA AMIC4", "VA MIC BIAS4",
 		"VA AMIC5", "Analog Mic5",
-		"VA AMIC5", "VA MIC BIAS4",
+		"VA AMIC5", "VA MIC BIAS3",
 		"TX DMIC0", "Digital Mic0",
 		"TX DMIC0", "MIC BIAS3",
 		"TX DMIC1", "Digital Mic1",
@@ -76,33 +58,10 @@
 		"VA DMIC2", "VA MIC BIAS1",
 		"VA DMIC3", "VA MIC BIAS3",
 		"VA DMIC4", "VA MIC BIAS4";
-	qcom,tert-mi2s-gpios = <&cdc_tert_mi2s_gpios>;
+
 	qcom,msm-mbhc-hs-mic-max-threshold-mv = <2600>;
-	qcom,msm-mbhc-hs-mic-min-threshold-mv = <75>;
-	qcom,msm-mbhc-usbc-audio-supported = <1>;
-	qcom,msm-mbhc-hphl-swh = <0>;
-	oplus,mbhc-headset-micbias-alwayon = <1>;
-	asoc-codec  = <&stub_codec>, <&lpass_cdc>,
-		      <&wcd938x_codec>, <&swr_haptics>;
-	asoc-codec-names = "msm-stub-codec.1", "lpass-cdc",
-			   "wcd938x_codec", "swr-haptics";
-	qcom,wsa-max-devs = <0>;
-	fsa4480-i2c-handle = <&fsa4480_new>;
-};
-
-&cdc_tert_mi2s_gpios {
-	status= "ok";
-	compatible = "qcom,msm-cdc-pinctrl";
-	pinctrl-names = "aud_active", "aud_sleep";
-	pinctrl-0 = <&tert_mi2s_sck_active &tert_mi2s_ws_active
-			&tert_mi2s_sd0_active &tert_mi2s_sd1_active>;
-	pinctrl-1 = <&tert_mi2s_sck_sleep &tert_mi2s_ws_sleep
-			&tert_mi2s_sd0_sleep &tert_mi2s_sd1_sleep>;
-};
-
-&dai_mi2s2 {
-	qcom,msm-mi2s-tx-lines = <1>;
-	qcom,msm-mi2s-rx-lines = <2>;
+	qcom,msm-mbhc-hs-mic-min-threshold-mv = <112>; /* 75*2700/1800 */
+	oplus,mbhc-check-cross-conn = <1>;
 };
 
 &qupv3_se13_i2c {
@@ -115,8 +74,10 @@
 		tfa9874_vdd-supply = <&S10B>;
 		tfa_min_range = <5000>;
 		tfa_max_range = <8000>;
+		tfa_default_mohm = <5800>;
 		tfa_channel = <0>;
 		status = "ok";
+		is_use_freq = <1>;
 	};
 	tfa98xx@35 {
 		compatible = "nxp,tfa98xx";
@@ -125,26 +86,18 @@
 		tfa9874_vdd-supply = <&S10B>;
 		tfa_min_range = <5000>;
 		tfa_max_range = <8000>;
+		tfa_default_mohm = <6000>;
 		tfa_channel = <1>;
 		status = "ok";
+		is_use_freq = <1>;
 	};
 };
 
-&wsa_spkr_en1 {
-	status = "disabled";
+&tert_mi2s_sd1_active {
+	config {
+		pins = "gpio124";
+		bias-pull-down;
+	};
 };
 
-&wsa_spkr_en2 {
-	status = "disabled";
-};
-
-&wsa2_spkr_en1 {
-	status = "disabled";
-};
-
-&wsa2_spkr_en2 {
-	status = "disabled";
-};
-
-#include "oplus-audio-extend.dtsi"
 /* OPLUS_ARCH_EXTENDS */
