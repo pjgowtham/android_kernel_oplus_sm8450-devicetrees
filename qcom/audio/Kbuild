@@ -70,7 +70,9 @@ dtbo-$(CONFIG_ARCH_CAPE) += oplus/whiteswan-22001-audio-cape-overlay.dtbo \
                  oplus/senna-22624-audio-cape-overlay.dtbo \
                  oplus/senna-22625-audio-cape-overlay.dtbo \
                  oplus/senna-22623-audio-cape-overlay.dtbo \
-                 oplus/udon-22803-audio-cape-overlay.dtbo
+                 oplus/udon-22803-audio-cape-overlay.dtbo \
+                 oplus/monroe-22091-audio-cape-overlay.dtbo \
+                 oplus/daoxiang-23023-audio-cape-overlay.dtbo
 
 #for diwali platform
 dtbo-$(CONFIG_ARCH_DIWALI) += oplus/wuyi-21125-audio-diwali-overlay.dtbo \
