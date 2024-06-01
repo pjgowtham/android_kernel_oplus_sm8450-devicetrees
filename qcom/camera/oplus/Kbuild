@@ -6,13 +6,13 @@ dtbo-$(CONFIG_ARCH_CAPE) += ../ukee-camera.dtbo
 dtbo-$(CONFIG_ARCH_DIWALI) += ../diwali-camera.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += ../waipio-camera.dtbo
 
-dtbo-$(CONFIG_ARCH_CAPE) += ovaltine-21841-camera-cape-overlay.dtbo
-dtbo-$(CONFIG_ARCH_CAPE) += udon_22803-camera-cape-overlay.dtbo
+dtbo-$(CONFIG_OVALTINE_DTB) += ovaltine-21841-camera-cape-overlay.dtbo
+dtbo-$(CONFIG_UDON_DTB) += udon_22803-camera-cape-overlay.dtbo
 
-dtbo-$(CONFIG_ARCH_WAIPIO) += ferrari-21631-camera-waipio-overlay.dtbo
-dtbo-$(CONFIG_ARCH_WAIPIO) += wly-20846-camera-waipio-overlay.dtbo
-dtbo-$(CONFIG_ARCH_WAIPIO) += wly-20846-camera-waipio-overlay-EVB.dtbo
-dtbo-$(CONFIG_ARCH_WAIPIO) += wly-20846-camera-waipio-overlay-preT0.dtbo
+dtbo-$(CONFIG_FERRARI_DTB) += ferrari-21631-camera-waipio-overlay.dtbo
+dtbo-$(CONFIG_WLY_DTB) += wly-20846-camera-waipio-overlay.dtbo
+dtbo-$(CONFIG_WLY_DTB) += wly-20846-camera-waipio-overlay-EVB.dtbo
+dtbo-$(CONFIG_WLY_DTB) += wly-20846-camera-waipio-overlay-preT0.dtbo
 
 ifneq ($(CONFIG_OPLUS_DEVICE_DTBS), y)
 dtbo-$(CONFIG_ARCH_CAPE) += jennie_21605-camera-cape-overlay.dtbo
