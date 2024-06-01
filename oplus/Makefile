@@ -1,9 +1,9 @@
 ifeq ($(CONFIG_BUILD_ARM64_DT_OVERLAY),y)
 
-dtbo-$(CONFIG_ARCH_CAPE) +=  \
+dtbo-$(CONFIG_OVALTINE_DTB) +=  \
 	ovaltine-21841-cape-overlay.dtbo \
-	ovaltine-21845-cape-overlay.dtbo \
-	udon-22803-cape-overlay.dtbo
+	ovaltine-21845-cape-overlay.dtbo
+dtbo-$(CONFIG_UDON_DTB) += udon-22803-cape-overlay.dtbo
 
 ifneq ($(CONFIG_OPLUS_DEVICE_DTBS), y)
 dtbo-$(CONFIG_ARCH_CAPE) +=  \
@@ -45,8 +45,8 @@ coffee-23611-parrot-overlay.dtbo-base := parrot.dtb
 coffeea-23612-parrot-overlay.dtbo-base := parrot.dtb
 coffeen-23688-parrot-overlay.dtbo-base := parrot.dtb
 
-dtbo-$(CONFIG_ARCH_WAIPIO) +=  \
-	ferrari-21631-waipio-overlay.dtbo \
+dtbo-$(CONFIG_FERRARI_DTB) += ferrari-21631-waipio-overlay.dtbo
+dtbo-$(CONFIG_WLY_DTB) += \
 	wly-20846-waipio-overlay.dtbo \
 	wly-2084A-waipio-overlay.dtbo \
 	wly-20846-waipio-overlay-EVB.dtbo \

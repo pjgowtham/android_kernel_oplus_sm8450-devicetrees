@@ -2,10 +2,10 @@ dtbo-$(CONFIG_ARCH_CAPE) += ../display/cape-sde.dtbo
 dtbo-$(CONFIG_ARCH_DIWALI) += ../display/diwali-sde.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += ../display/waipio-sde.dtbo
 
-dtbo-y += ferrari-21631-display-waipio-overlay.dtbo
-dtbo-y += ovaltine-21841-display-cape-overlay.dtbo
-dtbo-y += udon-22803-display-cape-overlay.dtbo
-dtbo-y += wly-20846-display-waipio-overlay.dtbo
+dtbo-$(CONFIG_FERRARI_DTB) += ferrari-21631-display-waipio-overlay.dtbo
+dtbo-$(CONFIG_OVALTINE_DTB) += ovaltine-21841-display-cape-overlay.dtbo
+dtbo-$(CONFIG_UDON_DTB) += udon-22803-display-cape-overlay.dtbo
+dtbo-$(CONFIG_WLY_DTB) += wly-20846-display-waipio-overlay.dtbo
 
 ifneq ($(CONFIG_OPLUS_DEVICE_DTBS), y)
 dtbo-y += swan-22001-display-cape-overlay.dtbo
