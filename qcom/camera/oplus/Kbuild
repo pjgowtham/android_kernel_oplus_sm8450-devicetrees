@@ -6,10 +6,17 @@ dtbo-$(CONFIG_ARCH_CAPE) += ../ukee-camera.dtbo
 dtbo-$(CONFIG_ARCH_DIWALI) += ../diwali-camera.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += ../waipio-camera.dtbo
 
-dtbo-$(CONFIG_ARCH_CAPE) += jennie_21605-camera-cape-overlay.dtbo
-dtbo-$(CONFIG_ARCH_CAPE) += udon_22803-camera-cape-overlay.dtbo
-dtbo-$(CONFIG_ARCH_CAPE) += jennie_21606-camera-cape-overlay.dtbo
 dtbo-$(CONFIG_ARCH_CAPE) += ovaltine-21841-camera-cape-overlay.dtbo
+dtbo-$(CONFIG_ARCH_CAPE) += udon_22803-camera-cape-overlay.dtbo
+
+dtbo-$(CONFIG_ARCH_WAIPIO) += ferrari-21631-camera-waipio-overlay.dtbo
+dtbo-$(CONFIG_ARCH_WAIPIO) += wly-20846-camera-waipio-overlay.dtbo
+dtbo-$(CONFIG_ARCH_WAIPIO) += wly-20846-camera-waipio-overlay-EVB.dtbo
+dtbo-$(CONFIG_ARCH_WAIPIO) += wly-20846-camera-waipio-overlay-preT0.dtbo
+
+ifneq ($(CONFIG_OPLUS_DEVICE_DTBS), y)
+dtbo-$(CONFIG_ARCH_CAPE) += jennie_21605-camera-cape-overlay.dtbo
+dtbo-$(CONFIG_ARCH_CAPE) += jennie_21606-camera-cape-overlay.dtbo
 dtbo-$(CONFIG_ARCH_CAPE) += senna-22624-camera-cape-overlay.dtbo
 dtbo-$(CONFIG_ARCH_CAPE) += senna-22625-camera-cape-overlay.dtbo
 dtbo-$(CONFIG_ARCH_CAPE) += whiteswan_22001-camera-cape-overlay.dtbo
@@ -22,13 +29,9 @@ dtbo-$(CONFIG_ARCH_CAPE) += senna_22623-camera-ukee-overlay.dtbo
 
 dtbo-$(CONFIG_ARCH_DIWALI) += wuyi-21125-camera-diwali-overlay.dtbo
 
-dtbo-$(CONFIG_ARCH_WAIPIO) += wly-20846-camera-waipio-overlay.dtbo
-dtbo-$(CONFIG_ARCH_WAIPIO) += wly-20846-camera-waipio-overlay-EVB.dtbo
-dtbo-$(CONFIG_ARCH_WAIPIO) += wly-20846-camera-waipio-overlay-preT0.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += mt-20845-camera-waipio-overlay.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += jnc-20865-camera-waipio-overlay.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += baize-21001-camera-waipio-overlay.dtbo
-dtbo-$(CONFIG_ARCH_WAIPIO) += ferrari-21631-camera-waipio-overlay.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += kunpeng-21009-camera-waipio-overlay.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += unicorn-21166-camera-waipio-overlay.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += jennie_21605-camera-waipio-overlay.dtbo
@@ -36,7 +39,8 @@ dtbo-$(CONFIG_ARCH_WAIPIO) += udon_22803-camera-waipio-overlay.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += jennie_21606-camera-waipio-overlay.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += monroe_22091-camera-waipio-overlay.dtbo
 dtbo-$(CONFIG_ARCH_WAIPIO) += monroe_22091-camera-waipio-overlay-preT0.dtbo
+endif
 
-always-y    := $(dtb-y) $(dtbo-y)
-subdir-y    := $(dts-dirs)
-clean-files    := *.dtb *.dtbo
+always-y	:= $(dtbo-y) $(dtb-y)
+subdir-y	:= $(dts-dirs)
+clean-files	:= *.dtb *.dtbo
