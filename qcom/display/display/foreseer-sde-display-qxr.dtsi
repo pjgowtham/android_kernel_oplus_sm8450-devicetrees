@@ -34,5 +34,5 @@
 };
 
 &sde_dsi {
-	qcom,dsi-default-panel = <&dsi_sy049_quad_lm_dual_dsc_90hz_video>;
+	qcom,dsi-default-panel = <&dsi_sy049_dual_lm_dual_dsc_90hz_video>;
 };
