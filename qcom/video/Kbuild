@@ -18,6 +18,10 @@ ifeq ($(CONFIG_ARCH_NEO), y)
 dtbo-y += neo-vidc.dtbo
 endif
 
+ifeq ($(CONFIG_ARCH_BENGAL), y)
+dtbo-y += bengal-vidc.dtbo
+endif
+
 ifeq ($(CONFIG_ARCH_KHAJE), y)
 dtbo-y += khaje-vidc.dtbo
 dtbo-y += khaje-vidc-iot.dtbo
