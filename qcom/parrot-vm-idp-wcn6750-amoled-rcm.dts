@@ -6,5 +6,5 @@
 / {
 	model = "Qualcomm Technologies, Inc. Parrot WCN6750 VM IDP + AMOLED + RCM";
 	compatible = "qcom,parrot-idp", "qcom,parrot", "qcom,idp";
-	qcom,board-id = <34 2>;
+	qcom,board-id = <34 2>, <34 6>;
 };

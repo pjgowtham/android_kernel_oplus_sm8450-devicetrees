@@ -40,6 +40,7 @@ Optional properties:
   - qcom,vreg_ol_cpr: Specifies voltage regulator used for OL CPR vote
   - qcom,pon-gpio-control: Boolean context flag to enable PMIC GPIO based
 			   power sequence trigger via SPMI
+  - wcn-hw-version: Parameter to differentiate between different WCN HW Versions
 
 WLAN SMP2P sub nodes
 

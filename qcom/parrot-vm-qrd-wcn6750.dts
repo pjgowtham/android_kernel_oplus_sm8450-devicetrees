@@ -6,5 +6,5 @@
 / {
 	model = "Qualcomm Technologies, Inc. Parrot SVM QRD + WCN6750";
 	compatible = "qcom,parrot-qrd", "qcom,parrot", "qcom,qrd";
-	qcom,board-id = <0x1000B 1>;
+	qcom,board-id = <0x1000B 1>, <0x1000B 2>;
 };

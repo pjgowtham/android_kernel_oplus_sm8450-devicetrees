@@ -357,6 +357,8 @@
 
 &itof_level {
 	enable-gpio = <&tlmm 87 GPIO_ACTIVE_HIGH>;
+	regulator-min-microvolt = <4300000>;
+	regulator-max-microvolt = <4300000>;
 	status = "ok";
 };
 

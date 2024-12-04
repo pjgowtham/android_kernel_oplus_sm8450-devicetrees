@@ -8,6 +8,6 @@
 / {
 	model = "Qualcomm Technologies, Inc. Parrot WCN3990 IDP 4GB DDR + AMOLED + RCM";
 	compatible = "qcom,parrot-idp", "qcom,parrot", "qcom,idp";
-	qcom,msm-id = <537 0x10000>;
+	qcom,msm-id = <537 0x10000>, <663 0x10000>;
 	qcom,board-id = <34 0x603>;
 };
